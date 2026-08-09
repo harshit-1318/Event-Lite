@@ -1,4 +1,4 @@
-# 🎓 EventElite V2 — Enterprise Campus Event Ecosystem
+# 🎓 EventElite — Enterprise Campus Event Ecosystem
 
 <div align="center">
 
