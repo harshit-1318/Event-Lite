@@ -12,7 +12,7 @@ interface HeroSectionProps {
 export function HeroSection({ user, totalEventsCount, totalStudentsCount }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-24">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-linear-to-tr from-blue-600/15 via-indigo-500/10 to-transparent blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-125 bg-linear-to-tr from-blue-600/15 via-indigo-500/10 to-transparent blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-7">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/80 text-xs font-semibold text-blue-700 dark:text-blue-300 shadow-xs">
