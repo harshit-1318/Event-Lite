@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  STUDENT
+  FACULTY
+  ADMIN
+}
+
+enum EventStatus {
+  DRAFT
+  PENDING_APPROVAL
+  PUBLISHED
+  CANCELLED
+  COMPLETED
+}
+
+enum PaymentStatus {
+  FREE
+  PENDING
+  PAID
+  REJECTED
+}
+
+enum RegistrationStatus {
+  CONFIRMED
+  CANCELLED
+  WAITLISTED
+}
+
+enum ParticipationStatus {
+  ATTENDING
+  NOT_ATTENDING
+}
+
+enum NotificationType {
+  REGISTRATION_CONFIRMATION
+  PAYMENT_UPDATE
+  EVENT_UPDATE
+  EVENT_CANCELLATION
+  EVENT_REMINDER
+  ADMIN_ALERT
+}

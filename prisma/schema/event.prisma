@@ -1,0 +1,41 @@
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  icon        String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  events Event[]
+}
+
+model Event {
+  id               String       @id @default(cuid())
+  title            String
+  slug             String       @unique
+  description      String       @db.Text
+  shortDescription String?      @db.Text
+  imageUrl         String?
+  categoryId       String
+  organizerId      String
+  venue            String
+  startDate        DateTime
+  endDate          DateTime
+  time             String
+  fee              Decimal      @default(0.00) @db.Decimal(10, 2)
+  capacity         Int          @default(100)
+  status           EventStatus  @default(PUBLISHED)
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  // Relations
+  category      Category       @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  organizer     User           @relation("OrganizerEvents", fields: [organizerId], references: [id], onDelete: Cascade)
+  registrations Registration[]
+
+  @@index([status])
+  @@index([startDate])
+  @@index([categoryId])
+  @@index([organizerId])
+}

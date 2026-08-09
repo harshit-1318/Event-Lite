@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EventElite V2 — Production-Grade Event Management Platform
 
-## Getting Started
+EventElite V2 is the modernized, full-stack event management ecosystem for DAV College Jalandhar, built with Next.js 16, React 19, TypeScript, PostgreSQL, Prisma ORM 7, Tailwind CSS, and Auth.js v5.
 
-First, run the development server:
+---
+
+## 🚀 Key Features
+
+### 🎓 Students
+- Browse, search, and filter campus workshops, hackathons, seminars, cultural fests, and sports championships.
+- 1-Click atomic event registration with live seat capacity tracking and conflict checks.
+- View personalized enrolled events, pass statuses (Free/Pending/Paid), and registration history.
+- Real-time in-app notification center and downloadable passes.
+
+### 👨‍🏫 Faculty
+- Create campus events with Cloudinary image upload and date conflict blockers.
+- Manage attendee rosters and approve/reject pending registrations for paid sessions.
+- Direct student enrollment assistance for departmental activities.
+
+### 👑 Administration
+- System-wide user administration with active/deactivated status control.
+- Global event oversight and category taxonomy management.
+- Real-time analytical statistics and security audit logging.
+
+---
+
+## 🛠️ Technology Stack
+- **Framework**: Next.js 16 (App Router), React 19, TypeScript
+- **Styling & UI**: Tailwind CSS, shadcn/ui, Lucide Icons, Framer Motion
+- **Database**: PostgreSQL with Prisma ORM 7
+- **Authentication**: Auth.js v5 with bcrypt password hashing and RBAC
+- **Validation**: Zod runtime schemas & React Hook Form
+- **Storage**: Cloudinary Cloud Media CDN
+- **Email**: Resend API
+
+---
+
+## 🔑 Development Login Credentials
+- **Admin**: `admin@eventelite.com` | Password: `Admin@12345`
+- **Faculty**: `faculty@eventelite.com` | Password: `Faculty@12345`
+- **Student**: `student@eventelite.com` | Password: `Student@12345`
+
+---
+
+## 📦 Getting Started
 
 ```bash
+# 1. Install dependencies
+npm install
+
+# 2. Push Prisma schema to PostgreSQL
+npx prisma db push
+
+# 3. Seed initial users, categories & realistic events
+npm run db:seed
+
+# 4. Start local development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) to view the application.

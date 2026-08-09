@@ -1,0 +1,18 @@
+model Registration {
+  id                  String              @id @default(cuid())
+  userId              String
+  eventId             String
+  status              RegistrationStatus  @default(CONFIRMED)
+  paymentStatus       PaymentStatus       @default(FREE)
+  participationStatus ParticipationStatus @default(ATTENDING)
+  registeredAt        DateTime            @default(now())
+  cancelledAt         DateTime?
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eventId])
+  @@index([userId])
+  @@index([eventId])
+  @@index([paymentStatus])
+}
