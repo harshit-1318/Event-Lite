@@ -12,7 +12,7 @@
 Configure the following in the production environment:
 ```bash
 # Database (Connection Pooling enabled)
-DATABASE_URL="postgresql://user:pass@ep-host.neon.tech/eventelite?sslmode=require"
+DATABASE_URL="postgresql://user:pass@ep-host.neon.tech/eventelite?sslmode=verify-full"
 
 # Auth.js / NextAuth
 AUTH_SECRET="generated-secure-random-32-byte-hex-secret"

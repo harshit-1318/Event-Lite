@@ -6,13 +6,17 @@ import { Calendar, PlusCircle } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+import { serializeEvents } from "@/lib/utils";
+
 export default async function AdminEventsPage() {
   await requireAdmin();
 
-  const events = await prisma.event.findMany({
-    include: { category: true, _count: { select: { registrations: true } } },
-    orderBy: { startDate: "desc" },
-  });
+  const events = serializeEvents(
+    await prisma.event.findMany({
+      include: { category: true, _count: { select: { registrations: true } } },
+      orderBy: { startDate: "desc" },
+    })
+  );
 
   return (
     <div className="space-y-6">

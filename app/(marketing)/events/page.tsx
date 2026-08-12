@@ -4,6 +4,7 @@ import { getCurrentUser } from "@/lib/permissions/rbac";
 import { EventFilters } from "@/components/events/event-filters";
 import { EventGrid } from "@/components/events/event-grid";
 import { EventsPagination } from "@/components/events/events-pagination";
+import { serializeEvents } from "@/lib/utils";
 import { Metadata } from "next";
 import { Prisma } from "@prisma/client";
 
@@ -73,7 +74,7 @@ export default async function EventsPage({ searchParams }: EventsPageProps) {
       </div>
 
       <EventFilters categories={categories} />
-      <EventGrid events={events as any} registeredEventIds={userRegistrations} />
+      <EventGrid events={serializeEvents(events) as any} registeredEventIds={userRegistrations} />
       <EventsPagination currentPage={currentPage} totalPages={totalPages} search={search} category={category} fee={fee} sort={sort} />
     </div>
   );

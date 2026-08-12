@@ -57,3 +57,19 @@ export function slugify(str: string): string {
     .replace(/[\s_-]+/g, "-")
     .replace(/^-+|-+$/g, "");
 }
+
+/**
+ * Serializes Prisma Event objects (converting Decimal fee to number)
+ */
+export function serializeEvent<T extends Record<string, any>>(event: T): T {
+  if (!event) return event;
+  return {
+    ...event,
+    fee: event.fee !== undefined && event.fee !== null ? Number(event.fee) : event.fee,
+  };
+}
+
+export function serializeEvents<T extends Record<string, any>>(events: T[]): T[] {
+  if (!events || !Array.isArray(events)) return [];
+  return events.map(serializeEvent);
+}

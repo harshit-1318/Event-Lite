@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
     --background: 220 20% 98%;
@@ -14,22 +16,10 @@
     --secondary-foreground: 220.9 39.3% 11%;
     --muted: 220 14.3% 95.9%;
     --muted-foreground: 220 8.9% 46.1%;
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
     --border: 220 13% 91%;
-    --input: 220 13% 91%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.75rem;
-
-    /* Brand custom tokens */
-    --brand-blue: 221 83% 53%;
-    --brand-indigo: 243 75% 59%;
-    --brand-amber: 38 92% 50%;
-    --brand-emerald: 160 84% 39%;
   }
-
   .dark {
     --background: 224 71.4% 4.1%;
     --foreground: 210 20% 98%;
@@ -43,20 +33,12 @@
     --secondary-foreground: 210 20% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
     --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
   }
 }
 
-* {
-  border-color: hsl(var(--border));
-}
-
+* { border-color: hsl(var(--border)); }
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
@@ -66,31 +48,31 @@ body {
   flex-direction: column;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.3);
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground) / 0.5);
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(100, 116, 139, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* Glassmorphism utility */
 .glass-panel {
-  background: hsl(var(--card) / 0.8);
-  backdrop-filter: blur(12px);
+  background: hsl(var(--card) / 0.85);
+  backdrop-filter: blur(16px);
   border: 1px solid hsl(var(--border) / 0.8);
 }
 
-.glass-dropdown {
-  background: hsl(var(--popover) / 0.95);
-  backdrop-filter: blur(16px);
-  border: 1px solid hsl(var(--border));
+.mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

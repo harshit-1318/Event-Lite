@@ -9,7 +9,6 @@ export default async function MarketingLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Fetch up to 5 upcoming published events for the ticker
   let tickerEvents: any[] = [];
   try {
     tickerEvents = await prisma.event.findMany({
@@ -24,15 +23,14 @@ export default async function MarketingLayout({
         startDate: true,
       },
       orderBy: { startDate: "asc" },
-      take: 5,
+      take: 8,
     });
   } catch (error) {
-    // Graceful fallback if database connection is pending during build
     tickerEvents = [];
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50/50 dark:bg-slate-950">
+    <div className="min-h-screen flex flex-col bg-slate-50/60 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
       <Navbar />
       {tickerEvents.length > 0 && <EventTicker events={tickerEvents} />}
       <main className="flex-1">{children}</main>

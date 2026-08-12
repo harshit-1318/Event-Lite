@@ -7,6 +7,7 @@ import { EventHighlights } from "@/components/events/detail/event-highlights";
 import { EventSidebar } from "@/components/events/detail/event-sidebar";
 import { EventOrganizer } from "@/components/events/detail/event-organizer";
 import { EventCard } from "@/components/events/event-card";
+import { serializeEvent, serializeEvents } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -33,6 +34,8 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
 
   if (!event) notFound();
 
+  const serializedEvent = serializeEvent(event);
+
   let userRegistration = null;
   if (user) {
     userRegistration = await prisma.registration.findUnique({
@@ -40,11 +43,13 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
     });
   }
 
-  const relatedEvents = await prisma.event.findMany({
-    where: { categoryId: event.categoryId, id: { not: event.id }, status: "PUBLISHED" },
-    include: { category: true, _count: { select: { registrations: true } } },
-    take: 3,
-  });
+  const relatedEvents = serializeEvents(
+    await prisma.event.findMany({
+      where: { categoryId: event.categoryId, id: { not: event.id }, status: "PUBLISHED" },
+      include: { category: true, _count: { select: { registrations: true } } },
+      take: 3,
+    })
+  );
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
@@ -56,8 +61,8 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-6">
-          <EventHeader event={event} />
-          <EventHighlights event={event} />
+          <EventHeader event={serializedEvent} />
+          <EventHighlights event={serializedEvent} />
           <div className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-3">
             <h3 className="text-lg font-bold text-slate-900 dark:text-white">About This Event</h3>
             <div className="text-xs sm:text-sm leading-relaxed whitespace-pre-line text-slate-600 dark:text-slate-300">
@@ -66,7 +71,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
           </div>
           <EventOrganizer organizer={event.organizer} />
         </div>
-        <EventSidebar event={event} currentUser={user} userRegistration={userRegistration} />
+        <EventSidebar event={serializedEvent} currentUser={user} userRegistration={userRegistration} />
       </div>
 
       {relatedEvents.length > 0 && (

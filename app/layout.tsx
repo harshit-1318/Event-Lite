@@ -13,24 +13,27 @@ export const metadata: Metadata = {
     template: "%s | EventElite DAV College",
   },
   description: "Official event discovery, registration & management portal for DAV College Jalandhar.",
-  openGraph: {
-    title: "EventElite — Campus Event Platform",
-    description: "Discover workshops, hackathons, sports & cultural fests at DAV College.",
-    url: "/",
-    siteName: "EventElite",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "EventElite — Campus Event Platform",
-    description: "Discover workshops, hackathons & fests at DAV College.",
-  },
 };
+
+const themeScript = `
+  try {
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (stored === 'dark' || (!stored && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  } catch (e) {}
+`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${outfit.variable} h-full antialiased`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="min-h-full flex flex-col font-sans bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-200">
         {children}
         <Toaster position="top-right" richColors closeButton />
       </body>

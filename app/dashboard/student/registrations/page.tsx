@@ -6,16 +6,23 @@ import { CalendarX } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+import { serializeEvents } from "@/lib/utils";
+
 export default async function StudentRegistrationsPage() {
   const user = await requireAuth();
 
-  const registrations = await prisma.registration.findMany({
+  const rawRegistrations = await prisma.registration.findMany({
     where: { userId: user.id, status: "CONFIRMED" },
     include: {
       event: { include: { category: true } },
     },
     orderBy: { registeredAt: "desc" },
   });
+
+  const registrations = rawRegistrations.map((r) => ({
+    ...r,
+    event: r.event ? { ...r.event, fee: Number(r.event.fee) } : r.event,
+  }));
 
   return (
     <div className="space-y-6">

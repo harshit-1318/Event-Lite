@@ -1,15 +1,20 @@
-import React from "react";
 import { prisma } from "@/lib/db/prisma";
 import { getCurrentUser } from "@/lib/permissions/rbac";
-import { HeroSection } from "@/components/marketing/hero-section";
+import { HeroSection } from "@/components/marketing/hero/hero-section";
 import { CategoriesSection } from "@/components/marketing/categories-section";
+import { FlagshipSpotlight } from "@/components/marketing/flagship-spotlight";
+import { HowItWorksSection } from "@/components/marketing/how-it-works/how-it-works-section";
 import { FeaturedEvents } from "@/components/marketing/featured-events";
+import { FeaturesSection } from "@/components/marketing/features-section";
+import { TestimonialsSection } from "@/components/marketing/testimonials-section";
+import { FaqSection } from "@/components/marketing/faq-section";
 import { LegacyBanner } from "@/components/marketing/legacy-banner";
+import { serializeEvents } from "@/lib/utils";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "EventElite V2 — Official Event Platform | DAV College Jalandhar",
-  description: "Collegiate event management and enrollment portal for DAV College Jalandhar.",
+  title: "EventElite V2 — Official Campus Event Platform | DAV College Jalandhar",
+  description: "Collegiate event management, hackathons, and pass portal for DAV College Jalandhar.",
 };
 
 export default async function HomePage() {
@@ -21,12 +26,13 @@ export default async function HomePage() {
   let totalStudentsCount = 5000;
 
   try {
-    featuredEvents = await prisma.event.findMany({
+    const rawEvents = await prisma.event.findMany({
       where: { status: "PUBLISHED", startDate: { gte: new Date() } },
       include: { category: true, _count: { select: { registrations: true } } },
       orderBy: { startDate: "asc" },
       take: 6,
     });
+    featuredEvents = serializeEvents(rawEvents);
     totalEventsCount = (await prisma.event.count({ where: { status: "PUBLISHED" } })) || 120;
     totalStudentsCount = (await prisma.user.count({ where: { role: "STUDENT" } })) || 5000;
 
@@ -40,12 +46,24 @@ export default async function HomePage() {
   } catch (error) {}
 
   return (
-    <div className="space-y-16 pb-20">
-      <HeroSection user={user} totalEventsCount={totalEventsCount} totalStudentsCount={totalStudentsCount} />
+    <div className="space-y-24 pb-28">
+      <HeroSection
+        user={user}
+        totalEventsCount={totalEventsCount}
+        totalStudentsCount={totalStudentsCount}
+      />
       <CategoriesSection />
+      <FlagshipSpotlight />
+      <HowItWorksSection />
       {featuredEvents.length > 0 && (
-        <FeaturedEvents events={featuredEvents} userRegistrations={userRegistrations} />
+        <FeaturedEvents
+          events={featuredEvents}
+          userRegistrations={userRegistrations}
+        />
       )}
+      <FeaturesSection />
+      <TestimonialsSection />
+      <FaqSection />
       <LegacyBanner />
     </div>
   );
