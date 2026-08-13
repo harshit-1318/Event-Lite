@@ -1,7 +1,6 @@
-import React from "react";
 import { requireAdmin } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { StatsCard } from "@/components/dashboard/stats-card";
+import { StatsCard } from "@/components/dashboard";
 import { Users, Calendar, Trophy, DollarSign, ShieldAlert } from "lucide-react";
 import Link from "next/link";
 

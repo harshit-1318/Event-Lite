@@ -1,4 +1,3 @@
-import React from "react";
 
 interface CategoryPillsProps {
   categories: Array<{ id: string; name: string; slug: string }>;

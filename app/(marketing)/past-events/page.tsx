@@ -1,6 +1,5 @@
-import React from "react";
 import { prisma } from "@/lib/db/prisma";
-import { EventGrid } from "@/components/events/event-grid";
+import { EventGrid } from "@/components/events";
 import { History, Sparkles, Trophy, Award } from "lucide-react";
 import { serializeEvents } from "@/lib/utils";
 import { Metadata } from "next";

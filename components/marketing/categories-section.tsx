@@ -1,9 +1,9 @@
-import React from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/constants";
 import { ArrowRight, Code2, Mic, Theater, Trophy, Building2, Sparkles, GraduationCap, Calendar, Compass } from "lucide-react";
 
-const iconMap: Record<string, React.ReactNode> = {
+const iconMap: Record<string, ReactNode> = {
   LaptopCode: <Code2 className="w-5 h-5" />,
   Code2: <Code2 className="w-5 h-5" />,
   Mic: <Mic className="w-5 h-5" />,

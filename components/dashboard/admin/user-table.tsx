@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useTransition } from "react";
+import { useTransition } from "react";
 import { toggleUserStatusAction, changeUserRoleAction } from "@/actions/admin.actions";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";

@@ -1,14 +1,13 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { requireAdmin } from "@/lib/permissions/rbac";
-import { DashboardNav } from "@/components/dashboard/dashboard-nav";
-import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar";
+import { DashboardNav, DashboardSidebar } from "@/components/dashboard";
 import { LayoutDashboard, Users, Calendar, Tags, ShieldAlert } from "lucide-react";
 import { prisma } from "@/lib/db/prisma";
 
 export default async function AdminDashboardLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   await requireAdmin();
 

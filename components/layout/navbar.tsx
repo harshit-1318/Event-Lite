@@ -1,4 +1,3 @@
-import React from "react";
 import { getCurrentUser } from "@/lib/permissions/rbac";
 import { TopBar } from "./nav/top-bar";
 import { NavLogo } from "./nav/nav-logo";

@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { Sparkles, Mail, Phone, MapPin, ExternalLink, ShieldCheck } from "lucide-react";
 import { NAV_LINKS, CATEGORIES } from "@/lib/constants";

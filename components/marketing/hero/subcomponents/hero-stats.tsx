@@ -1,4 +1,3 @@
-import React from "react";
 import { Users, Trophy, CalendarCheck, Award, Sparkles } from "lucide-react";
 
 interface HeroStatsProps {

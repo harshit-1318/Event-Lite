@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { getCurrentUser } from "@/lib/permissions/rbac";
 import { UserMenu } from "@/components/layout/user-menu";

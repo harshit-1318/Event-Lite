@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Search, Sparkles, TrendingUp } from "lucide-react";
 
@@ -15,7 +15,7 @@ export function HeroSearch() {
   const [query, setQuery] = useState("");
   const router = useRouter();
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = (e: FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
       router.push(`/events?search=${encodeURIComponent(query.trim())}`);

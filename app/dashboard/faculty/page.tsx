@@ -1,7 +1,6 @@
-import React from "react";
 import { requireFacultyOrAdmin } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { StatsCard } from "@/components/dashboard/stats-card";
+import { StatsCard } from "@/components/dashboard";
 import { Calendar, Users, Clock, PlusCircle } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

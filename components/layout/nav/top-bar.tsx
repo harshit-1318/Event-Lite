@@ -1,4 +1,3 @@
-import React from "react";
 import { Phone, Shield, ExternalLink } from "lucide-react";
 
 export function TopBar() {

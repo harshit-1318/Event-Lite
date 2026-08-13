@@ -1,4 +1,3 @@
-import React from "react";
 import { ShieldCheck, Award, GraduationCap, Building2, Users } from "lucide-react";
 import { Metadata } from "next";
 

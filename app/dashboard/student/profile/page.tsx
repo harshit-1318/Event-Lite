@@ -1,7 +1,6 @@
-import React from "react";
 import { requireAuth } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { ProfileForm } from "@/components/dashboard/student/profile-form";
+import { ProfileForm } from "@/components/dashboard/student";
 import { UserCheck } from "lucide-react";
 
 export default async function StudentProfilePage() {

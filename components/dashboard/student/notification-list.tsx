@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { Bell, ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";

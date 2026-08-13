@@ -1,13 +1,11 @@
-import React from "react";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { EventTicker } from "@/components/layout/event-ticker";
+import type { ReactNode } from "react";
+import { Navbar, Footer, EventTicker } from "@/components/layout";
 import { prisma } from "@/lib/db/prisma";
 
 export default async function MarketingLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   let tickerEvents: any[] = [];
   try {

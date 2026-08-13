@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, type RegisterInput } from "@/lib/validations/auth.schema";
 import { registerAction } from "@/actions/auth.actions";
-import { RegisterFormFields } from "./register-form-fields";
+import { RegisterFormFields } from "./subcomponents/register-form-fields";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Loader2, ArrowRight } from "lucide-react";

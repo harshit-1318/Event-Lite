@@ -1,4 +1,3 @@
-import React from "react";
 import { formatCurrency } from "@/lib/utils";
 import { EventDetailClient } from "@/components/events/event-detail-client";
 import { Users } from "lucide-react";

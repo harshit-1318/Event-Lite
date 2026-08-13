@@ -1,6 +1,5 @@
-import React from "react";
-import { HOW_IT_WORKS_STEPS } from "./how-it-works-data";
-import { HowItWorksCard } from "./how-it-works-card";
+import { HOW_IT_WORKS_STEPS } from "./subcomponents/how-it-works-data";
+import { HowItWorksCard } from "./subcomponents/how-it-works-card";
 import { Sparkles, ArrowRight } from "lucide-react";
 import Link from "next/link";
 

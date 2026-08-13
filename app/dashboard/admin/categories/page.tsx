@@ -1,7 +1,6 @@
-import React from "react";
 import { requireAdmin } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { CategoryManager } from "@/components/dashboard/admin/category-manager";
+import { CategoryManager } from "@/components/dashboard/admin";
 import { Tags } from "lucide-react";
 
 export default async function AdminCategoriesPage() {

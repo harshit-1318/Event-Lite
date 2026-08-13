@@ -1,7 +1,6 @@
-import React from "react";
 import { requireFacultyOrAdmin } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { EventForm } from "@/components/dashboard/faculty/event-form";
+import { EventForm } from "@/components/dashboard/faculty";
 
 export default async function CreateEventPage() {
   await requireFacultyOrAdmin();

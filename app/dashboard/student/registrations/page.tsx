@@ -1,7 +1,6 @@
-import React from "react";
 import { requireAuth } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { EnrolledEventItem } from "@/components/dashboard/student/enrolled-event-item";
+import { EnrolledEventItem } from "@/components/dashboard/student";
 import { CalendarX } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

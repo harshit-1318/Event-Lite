@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useTransition } from "react";
+import { useTransition } from "react";
 import { updatePaymentStatusAction } from "@/actions/registration.actions";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";

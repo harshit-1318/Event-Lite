@@ -1,12 +1,13 @@
-import React from "react";
 import { prisma } from "@/lib/db/prisma";
 import { getCurrentUser } from "@/lib/permissions/rbac";
 import { notFound } from "next/navigation";
-import { EventHeader } from "@/components/events/detail/event-header";
-import { EventHighlights } from "@/components/events/detail/event-highlights";
-import { EventSidebar } from "@/components/events/detail/event-sidebar";
-import { EventOrganizer } from "@/components/events/detail/event-organizer";
-import { EventCard } from "@/components/events/event-card";
+import {
+  EventHeader,
+  EventHighlights,
+  EventSidebar,
+  EventOrganizer,
+  EventCard,
+} from "@/components/events";
 import { serializeEvent, serializeEvents } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";

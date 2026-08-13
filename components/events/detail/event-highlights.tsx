@@ -1,4 +1,3 @@
-import React from "react";
 import { formatDateRange } from "@/lib/utils";
 import { Calendar, Clock, MapPin } from "lucide-react";
 

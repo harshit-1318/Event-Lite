@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { User } from "next-auth";
 import {
   DropdownMenu,
@@ -11,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { UserMenuLinks } from "@/components/layout/user-menu-links";
+import { UserMenuLinks } from "./subcomponents/user-menu-links";
 import { Role } from "@prisma/client";
 
 interface UserMenuProps {

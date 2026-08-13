@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useTransition } from "react";
+import { useTransition } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CategoryPills } from "@/components/events/category-pills";
+import { CategoryPills } from "./subcomponents/category-pills";
 import { Search, X } from "lucide-react";
 
 interface EventFiltersProps {
@@ -48,7 +48,7 @@ export function EventFilters({ categories }: EventFiltersProps) {
 
         <div className="flex flex-wrap items-center gap-2">
           <Select value={currentCategory} onValueChange={(val) => updateParam("category", val)}>
-            <SelectTrigger className="w-[140px] h-10 text-xs bg-slate-50"><SelectValue placeholder="Category" /></SelectTrigger>
+            <SelectTrigger className="w-35 h-10 text-xs bg-slate-50"><SelectValue placeholder="Category" /></SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All Categories</SelectItem>
               {categories.map((c) => (<SelectItem key={c.id} value={c.slug}>{c.name}</SelectItem>))}
@@ -56,12 +56,12 @@ export function EventFilters({ categories }: EventFiltersProps) {
           </Select>
 
           <Select value={currentFee} onValueChange={(val) => updateParam("fee", val)}>
-            <SelectTrigger className="w-[110px] h-10 text-xs bg-slate-50"><SelectValue placeholder="Fee" /></SelectTrigger>
+            <SelectTrigger className="w-27.5 h-10 text-xs bg-slate-50"><SelectValue placeholder="Fee" /></SelectTrigger>
             <SelectContent><SelectItem value="all">All</SelectItem><SelectItem value="free">Free</SelectItem><SelectItem value="paid">Paid</SelectItem></SelectContent>
           </Select>
 
           <Select value={currentSort} onValueChange={(val) => updateParam("sort", val)}>
-            <SelectTrigger className="w-[130px] h-10 text-xs bg-slate-50"><SelectValue placeholder="Sort" /></SelectTrigger>
+            <SelectTrigger className="w-32.5 h-10 text-xs bg-slate-50"><SelectValue placeholder="Sort" /></SelectTrigger>
             <SelectContent><SelectItem value="upcoming">Upcoming</SelectItem><SelectItem value="latest">Latest</SelectItem><SelectItem value="title">A-Z</SelectItem></SelectContent>
           </Select>
 

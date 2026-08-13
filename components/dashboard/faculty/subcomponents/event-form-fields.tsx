@@ -1,4 +1,3 @@
-import React from "react";
 import { UseFormRegister, FieldErrors } from "react-hook-form";
 import { type EventInput } from "@/lib/validations/event.schema";
 import { Input } from "@/components/ui/input";

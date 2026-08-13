@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
+import { useState, useTransition, type FormEvent } from "react";
 import { createCategoryAction, deleteCategoryAction } from "@/actions/admin.actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,7 +18,7 @@ export function CategoryManager({ categories }: CategoryManagerProps) {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
-  const handleCreate = (e: React.FormEvent) => {
+  const handleCreate = (e: FormEvent) => {
     e.preventDefault();
     startTransition(async () => {
       const res = await createCategoryAction({ name, description });

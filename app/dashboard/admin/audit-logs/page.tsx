@@ -1,7 +1,6 @@
-import React from "react";
 import { requireAdmin } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { AuditLogTable } from "@/components/dashboard/admin/audit-log-table";
+import { AuditLogTable } from "@/components/dashboard/admin";
 import { ShieldAlert } from "lucide-react";
 
 export default async function AdminAuditLogsPage() {

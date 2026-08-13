@@ -1,4 +1,3 @@
-import React from "react";
 import { EventCard, EventCardProps } from "@/components/events/event-card";
 import { CalendarX, Search } from "lucide-react";
 import Link from "next/link";

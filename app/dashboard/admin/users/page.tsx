@@ -1,7 +1,6 @@
-import React from "react";
 import { requireAdmin } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { UserTable } from "@/components/dashboard/admin/user-table";
+import { UserTable } from "@/components/dashboard/admin";
 import { Users } from "lucide-react";
 
 export default async function AdminUsersPage() {

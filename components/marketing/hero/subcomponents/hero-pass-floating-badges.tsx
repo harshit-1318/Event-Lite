@@ -1,4 +1,3 @@
-import React from "react";
 import { Trophy, ShieldCheck, Flame } from "lucide-react";
 
 export function HeroPassFloatingBadges() {

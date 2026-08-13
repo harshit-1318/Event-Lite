@@ -1,14 +1,16 @@
 import { prisma } from "@/lib/db/prisma";
 import { getCurrentUser } from "@/lib/permissions/rbac";
-import { HeroSection } from "@/components/marketing/hero/hero-section";
-import { CategoriesSection } from "@/components/marketing/categories-section";
-import { FlagshipSpotlight } from "@/components/marketing/flagship-spotlight";
-import { HowItWorksSection } from "@/components/marketing/how-it-works/how-it-works-section";
-import { FeaturedEvents } from "@/components/marketing/featured-events";
-import { FeaturesSection } from "@/components/marketing/features-section";
-import { TestimonialsSection } from "@/components/marketing/testimonials-section";
-import { FaqSection } from "@/components/marketing/faq-section";
-import { LegacyBanner } from "@/components/marketing/legacy-banner";
+import {
+  HeroSection,
+  CategoriesSection,
+  FlagshipSpotlight,
+  HowItWorksSection,
+  FeaturedEvents,
+  FeaturesSection,
+  TestimonialsSection,
+  FaqSection,
+  LegacyBanner,
+} from "@/components/marketing";
 import { serializeEvents } from "@/lib/utils";
 import { Metadata } from "next";
 

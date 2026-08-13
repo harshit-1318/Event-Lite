@@ -1,5 +1,4 @@
 "use server";
-
 import { prisma } from "@/lib/db/prisma";
 import { requireAdmin } from "@/lib/permissions/rbac";
 import { slugify } from "@/lib/utils";

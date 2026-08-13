@@ -1,6 +1,5 @@
-import React from "react";
-import { BENTO_FEATURES } from "./bento/bento-features-data";
-import { BentoFeatureCard } from "./bento/bento-feature-card";
+import { BENTO_FEATURES } from "./subcomponents/bento-features-data";
+import { BentoFeatureCard } from "./subcomponents/bento-feature-card";
 import { Sparkles } from "lucide-react";
 
 export function FeaturesSection() {

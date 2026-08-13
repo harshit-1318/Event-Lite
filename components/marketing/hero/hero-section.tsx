@@ -1,8 +1,6 @@
-import React from "react";
-import { HeroLeftContent } from "./hero-left-content";
-import { HeroPassCard } from "./hero-pass-card";
-import { HeroStats } from "./hero-stats";
-
+import { HeroLeftContent } from "./subcomponents/hero-left-content";
+import { HeroPassCard } from "./subcomponents/hero-pass-card";
+import { HeroStats } from "./subcomponents/hero-stats";
 interface HeroSectionProps {
   user: any;
   totalEventsCount: number;

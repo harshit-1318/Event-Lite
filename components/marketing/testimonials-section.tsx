@@ -1,4 +1,3 @@
-import React from "react";
 import { Star, ShieldCheck, Sparkles } from "lucide-react";
 
 const REVIEWS = [

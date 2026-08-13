@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
 import { LayoutDashboard, CalendarCheck, PlusCircle, ShieldAlert, Bell, User as UserIcon, LogOut } from "lucide-react";

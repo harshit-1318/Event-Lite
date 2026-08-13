@@ -1,9 +1,6 @@
-import React from "react";
 import { prisma } from "@/lib/db/prisma";
 import { getCurrentUser } from "@/lib/permissions/rbac";
-import { EventFilters } from "@/components/events/event-filters";
-import { EventGrid } from "@/components/events/event-grid";
-import { EventsPagination } from "@/components/events/events-pagination";
+import { EventFilters, EventGrid, EventsPagination } from "@/components/events";
 import { serializeEvents } from "@/lib/utils";
 import { Metadata } from "next";
 import { Prisma } from "@prisma/client";

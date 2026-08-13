@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { formatCurrency, formatDateRange } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { EventCardCapacity } from "@/components/events/event-card-capacity";
+import { EventCardCapacity } from "./subcomponents/event-card-capacity";
 import { Calendar, Clock, MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
 import { EventStatus } from "@prisma/client";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { formatCurrency, formatDateRange } from "@/lib/utils";
 import { Calendar, MapPin, UserCheck } from "lucide-react";
 import { ParticipationStatus } from "@prisma/client";

@@ -1,4 +1,3 @@
-import React from "react";
 import { HeroBadge } from "./hero-badge";
 import { HeroHeading } from "./hero-heading";
 import { HeroActions } from "./hero-actions";

@@ -1,7 +1,6 @@
-import React from "react";
 import { requireAdmin } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { EventGrid } from "@/components/events/event-grid";
+import { EventGrid } from "@/components/events";
 import { Calendar, PlusCircle } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

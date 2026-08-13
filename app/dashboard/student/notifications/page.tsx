@@ -1,7 +1,6 @@
-import React from "react";
 import { requireAuth } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { NotificationList } from "@/components/dashboard/student/notification-list";
+import { NotificationList } from "@/components/dashboard/student";
 import { Bell } from "lucide-react";
 
 export default async function StudentNotificationsPage() {

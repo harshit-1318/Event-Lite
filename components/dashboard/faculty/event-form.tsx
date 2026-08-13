@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { eventSchema, type EventInput } from "@/lib/validations/event.schema";
 import { createEventAction, updateEventAction } from "@/actions/event.actions";
-import { EventFormFields } from "./event-form-fields";
+import { EventFormFields } from "./subcomponents/event-form-fields";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Loader2, Sparkles } from "lucide-react";

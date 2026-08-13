@@ -1,8 +1,8 @@
-import React from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Sparkles, ArrowLeft, ShieldCheck } from "lucide-react";
 
-export default function AuthLayout({ children }: { children: React.ReactNode }) {
+export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-950 to-indigo-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Decorative gradient orbs */}

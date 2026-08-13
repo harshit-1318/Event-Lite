@@ -1,7 +1,6 @@
-import React from "react";
 import { requireFacultyOrAdmin } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { DirectRegisterForm } from "@/components/dashboard/faculty/direct-register-form";
+import { DirectRegisterForm } from "@/components/dashboard/faculty";
 import { UserPlus } from "lucide-react";
 
 export default async function FacultyRegisterStudentPage() {

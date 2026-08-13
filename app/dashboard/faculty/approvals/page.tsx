@@ -1,7 +1,6 @@
-import React from "react";
 import { requireFacultyOrAdmin } from "@/lib/permissions/rbac";
 import { prisma } from "@/lib/db/prisma";
-import { ApprovalTable } from "@/components/dashboard/faculty/approval-table";
+import { ApprovalTable } from "@/components/dashboard/faculty";
 import { CheckCircle } from "lucide-react";
 
 export default async function FacultyApprovalsPage() {

@@ -1,4 +1,3 @@
-import React from "react";
 import { Sparkles, ShieldCheck } from "lucide-react";
 
 export function HeroBadge() {

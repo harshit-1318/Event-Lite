@@ -1,0 +1,9 @@
+export { HeroSection } from "./hero";
+export { HowItWorksSection } from "./how-it-works";
+export { FeaturesSection } from "./features";
+export { CategoriesSection } from "./categories-section";
+export { FlagshipSpotlight } from "./flagship-spotlight";
+export { FeaturedEvents } from "./featured-events";
+export { TestimonialsSection } from "./testimonials-section";
+export { FaqSection } from "./faq-section";
+export { LegacyBanner } from "./legacy-banner";

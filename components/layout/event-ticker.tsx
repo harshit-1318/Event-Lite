@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { Zap, Calendar, ArrowRight } from "lucide-react";
 import { formatDate } from "@/lib/utils";

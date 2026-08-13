@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { RegistrationModalBody } from "@/components/events/registration-modal-body";
+import { RegistrationModalBody } from "./subcomponents/registration-modal-body";
 import { registerForEventAction } from "@/actions/registration.actions";
 import { toast } from "sonner";
 import { Loader2, Sparkles, Ticket } from "lucide-react";

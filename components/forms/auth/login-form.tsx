@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema, type LoginInput } from "@/lib/validations/auth.schema";
 import { loginAction } from "@/actions/auth.actions";
-import { QuickDevCredentials } from "./quick-dev-credentials";
+import { QuickDevCredentials } from "./subcomponents/quick-dev-credentials";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
