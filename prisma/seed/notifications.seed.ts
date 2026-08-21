@@ -6,7 +6,7 @@ export async function seedNotifications(prisma: PrismaClient, students: any[]) {
   await prisma.notification.create({
     data: {
       userId: students[0].id,
-      title: "Welcome to EventElite V2! 🎓",
+      title: "Welcome to EventElite! 🎓",
       message: "Your student registration is confirmed. Start exploring upcoming campus fests and workshops.",
       type: NotificationType.REGISTRATION_CONFIRMATION,
       link: "/events",

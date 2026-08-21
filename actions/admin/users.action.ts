@@ -11,7 +11,9 @@ export async function toggleUserStatusAction(userId: string) {
   try {
     const user = await prisma.user.findUnique({ where: { id: userId } });
     if (!user) return { success: false, message: "User not found." };
-    if (user.id === admin.id) return { success: false, message: "Cannot deactivate own admin account." };
+    if (user.id === admin.id) {
+      return { success: false, message: "Cannot deactivate own admin account." };
+    }
 
     const updated = await prisma.user.update({
       where: { id: userId },
@@ -33,7 +35,7 @@ export async function toggleUserStatusAction(userId: string) {
       success: true,
       message: `User ${user.name} is now ${updated.isActive ? "Active" : "Deactivated"}.`,
     };
-  } catch (error) {
+  } catch {
     return { success: false, message: "Failed to update user status." };
   }
 }
@@ -42,6 +44,12 @@ export async function changeUserRoleAction(userId: string, role: Role) {
   const admin = await requireAdmin();
 
   try {
+    const targetUser = await prisma.user.findUnique({ where: { id: userId } });
+    if (!targetUser) return { success: false, message: "User not found." };
+    if (targetUser.id === admin.id && role !== Role.ADMIN) {
+      return { success: false, message: "Cannot demote your own admin account." };
+    }
+
     const user = await prisma.user.update({
       where: { id: userId },
       data: { role },
@@ -53,13 +61,13 @@ export async function changeUserRoleAction(userId: string, role: Role) {
         action: "USER_ROLE_CHANGE",
         entity: "USER",
         entityId: user.id,
-        details: { email: user.email, newRole: role },
+        details: { email: user.email, oldRole: targetUser.role, newRole: role },
       },
     });
 
     revalidatePath("/dashboard/admin/users");
-    return { success: true, message: `Role for ${user.name} changed to ${role}.` };
-  } catch (error) {
+    return { success: true, message: `Role for ${user.name} updated to ${role}.` };
+  } catch {
     return { success: false, message: "Failed to update user role." };
   }
 }

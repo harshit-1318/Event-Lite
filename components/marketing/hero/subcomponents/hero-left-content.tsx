@@ -2,7 +2,7 @@ import { HeroBadge } from "./hero-badge";
 import { HeroHeading } from "./hero-heading";
 import { HeroActions } from "./hero-actions";
 import { HeroSearch } from "./hero-search";
-import { Star, Shield } from "lucide-react";
+import { Star } from "lucide-react";
 
 interface HeroLeftContentProps {
   user: any;

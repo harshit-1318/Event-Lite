@@ -42,7 +42,7 @@ export default function AboutPage() {
       <div className="p-8 rounded-3xl bg-slate-900 text-white space-y-3 text-center">
         <h2 className="text-2xl font-bold">Empowering Student Engagement</h2>
         <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          EventElite V2 bridges faculty coordinators and thousands of eager student participants with transparent registration and real-time pass management.
+          EventElite bridges faculty coordinators and thousands of eager student participants with transparent registration and real-time pass management.
         </p>
       </div>
     </div>

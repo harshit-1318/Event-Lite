@@ -8,14 +8,9 @@ export function NavLogo() {
         <Sparkles className="w-4 h-4 animate-pulse" />
       </div>
       <div className="flex flex-col">
-        <div className="flex items-center gap-1.5">
-          <span className="text-lg font-black tracking-tight text-slate-900 dark:text-white">
-            Event<span className="text-blue-600">Elite</span>
-          </span>
-          <span className="px-1.5 py-0.2 rounded-md bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-[9px] font-black uppercase tracking-wider">
-            V2
-          </span>
-        </div>
+        <span className="text-lg font-black tracking-tight text-slate-900 dark:text-white">
+          Event<span className="text-blue-600">Elite</span>
+        </span>
       </div>
     </Link>
   );

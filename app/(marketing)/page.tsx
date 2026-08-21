@@ -15,7 +15,7 @@ import { serializeEvents } from "@/lib/utils";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "EventElite V2 — Official Campus Event Platform | DAV College Jalandhar",
+  title: "EventElite — Official Campus Event Platform | DAV College Jalandhar",
   description: "Collegiate event management, hackathons, and pass portal for DAV College Jalandhar.",
 };
 

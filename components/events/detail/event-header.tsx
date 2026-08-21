@@ -15,7 +15,14 @@ export function EventHeader({ event }: EventHeaderProps) {
   return (
     <div className="space-y-6">
       <div className="relative aspect-video w-full rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 shadow-sm">
-        <img src={event.imageUrl || defaultImage} alt={event.title} className="h-full w-full object-cover" />
+        <img
+          src={event.imageUrl || defaultImage}
+          alt={event.title}
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = defaultImage;
+          }}
+          className="h-full w-full object-cover"
+        />
         <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
         {event.category && (
           <div className="absolute top-4 left-4">

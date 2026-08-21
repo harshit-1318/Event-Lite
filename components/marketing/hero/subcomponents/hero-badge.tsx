@@ -10,7 +10,7 @@ export function HeroBadge() {
       <ShieldCheck className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
       <span className="tracking-tight">DAV College Jalandhar • NAAC A+ Official Portal</span>
       <span className="hidden sm:inline-block px-2 py-0.5 rounded-full bg-blue-600 text-white text-[10px] font-black uppercase">
-        V2.0 LIVE
+        LIVE PORTAL
       </span>
     </div>
   );

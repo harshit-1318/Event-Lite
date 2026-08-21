@@ -56,7 +56,7 @@ export const INITIAL_EVENTS = [
     time: "08:30 AM – 05:30 PM",
     fee: 0,
     capacity: 350,
-    imageUrl: "https://images.unsplash.com/photo-1531415074868-036b1c57e3ce?q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=1200",
     status: "PUBLISHED",
   },
   {

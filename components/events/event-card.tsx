@@ -36,7 +36,14 @@ export function EventCard({ event, isRegistered = false }: EventCardProps) {
   return (
     <div className="group flex flex-col rounded-3xl border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-900 shadow-xs hover:shadow-lg hover:border-blue-500/40 transition-all duration-200 overflow-hidden">
       <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
-        <img src={event.imageUrl || defaultImage} alt={event.title} className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        <img
+          src={event.imageUrl || defaultImage}
+          alt={event.title}
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = defaultImage;
+          }}
+          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
         <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent" />
         <div className="absolute top-3 left-3 right-3 flex justify-between items-center">
           {event.category && <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-white/90 dark:bg-slate-900/90 text-slate-900 dark:text-white backdrop-blur-md">{event.category.name}</span>}
